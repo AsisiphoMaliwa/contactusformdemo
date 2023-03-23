@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hdggdb.css">
+
+<body>
+    <div class="column">
+        <form action="https://formsubmit.co/your@email.com">
+            <fieldset>
+                <div style="text-align:center">
+
+                    <h2 style="color:black">Leave us a message</h2>
+                </div>
+
+                <label for="fname">Enter your First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                <label for="lname">Enter your last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                <label for="email">Email</label>
+                <input type="text" id="lname" name="email" placeholder="Your email.." required>
+                <label for="subject">Message</label>
+                <textarea id="subject" name="message" placeholder="Write something.." style="height:170px"></textarea>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </div>
+
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "asisiphomaliwa3@gmail.com",
+                Password: "@Asisipho24",
+                To: 'asisiphojasmine24@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New contact form enquiry",
+                Body: "Name:" + document.getElementById("firstname").value
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Message: " + document.getElementById("message").value
+
+            }).then(
+                message => alert("Message submitted successfully!")
+            );
+        }
+    </script>
+</body>
+
+</html>
